@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Date Question</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <!-- Embed GIF -->
+        <div class="gif-container">
+            <iframe src="https://giphy.com/embed/fvN5KrNcKKUyX7hNIA" width="480" height="442" style="border: none;" frameBorder="0" allowFullScreen></iframe>
+        </div>
+
+        <!-- Main Content -->
+        <h1>Wanna go on a date this weekend?</h1>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <button id="yesButton">Yes</button>
+            <button id="noButton">No</button>
+        </div>
+
+        <!-- Sparkles Container -->
+        <div class="particle-container"></div>
+
+        <!-- Sparkles Script -->
+        <script>
+            const particleContainer = document.querySelector('.particle-container');
+
+            // Create 50 sparkles
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                // Randomize positions and animation delays
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particle.style.animationDuration = Math.random() * 3 + 3 + 's';
+
+                particleContainer.appendChild(particle);
+            }
+        </script>
+
+        <!-- Page-Specific Script -->
+        <script>
+            document.getElementById('yesButton').addEventListener('click', function () {
+                window.location.href = 'date-options.html'; // Navigate to the date options page
+            });
+
+            document.getElementById('noButton').addEventListener('click', function () {
+                alert("I wanna see you stop :(");
+            });
+        </script>
+    </body>
+</html>

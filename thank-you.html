@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Thank You</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h1>Thank you for planning our date baby ❤️</h1>
+        <p>I can't wait to see you! 🥰</p>
+
+        <!-- Sparkles Container -->
+        <div class="particle-container"></div>
+        <div class="tenor-gif-embed" data-postid="18059553370350307210" data-share-method="host" data-aspect-ratio="0.56266" data-width="100%">
+            <a href="https://tenor.com/view/cat-dance-dancing-cat-chinese-dancing-cat-funny-cat-meme-cat-gif-18059553370350307210">
+                Cat Dance Dancing Cat GIF
+            </a>
+            from 
+            <a href="https://tenor.com/search/cat+dance-gifs">Cat Dance GIFs</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        <!-- Sparkles Script -->
+        <script>
+            const particleContainer = document.querySelector('.particle-container');
+
+            // Create 50 sparkles
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                // Randomize positions and animation delays
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particle.style.animationDuration = Math.random() * 3 + 3 + 's';
+
+                particleContainer.appendChild(particle);
+            }
+        </script>
+    </body>
+</html>

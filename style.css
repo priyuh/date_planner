@@ -1,0 +1,232 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #0b1522;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Main Container for I LOVE YOU Text */
+.container {
+    display: flex;
+    flex-direction: row; /* Row alignment for inline elements */
+    align-items: center;
+    justify-content: center;
+    gap: 50px; /* Increase gap to create more space */
+}
+
+
+/* Text Styling */
+.text {
+    font-size: 4rem;
+    font-family: Arial, sans-serif;
+    color: #FFFFFF;
+    animation: textPop 1s infinite alternate;
+}
+
+/* Button Container for Yes/No Buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+/* Buttons Styling */
+button {
+    margin-top: 50px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #f20044;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Heading Styling */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Paragraph Styling */
+p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* List Styling for Date Options */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: center;
+}
+
+li {
+    margin: 10px 0;
+}
+
+/* Animation for the Heart */
+.heart {
+    height: 70px;
+    width: 70px;
+    background: #f20044;
+    position: relative;
+    transform: rotate(-45deg);
+    box-shadow: -10px 10px 90px #f20044;
+    animation: heart 0.6s linear infinite;
+}
+
+@keyframes heart {
+    0% {
+        transform: rotate(-45deg) scale(1.07);
+    }
+    80% {
+        transform: rotate(-45deg) scale(1.0);
+    }
+    100% {
+        transform: rotate(-45deg) scale(0.8);
+    }
+}
+
+.heart:before,
+.heart:after {
+    content: '';
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background: #f20044;
+    border-radius: 50%;
+    box-shadow: -10px 10px 90px #f20044;
+}
+
+.heart:before {
+    top: -50%;
+}
+
+.heart:after {
+    right: -50%;
+}
+
+/* Sparkles Animation */
+.particle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    animation: sparkleMove 5s infinite;
+}
+
+@keyframes sparkleMove {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-200px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Animation for Text Pop */
+@keyframes textPop {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+.gif-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Add space between GIF and heading */
+}
+
+.tenor-gif-embed {
+    margin-top: 20px; /* Space between text and GIF */
+    max-width: 300px; /* Limit the GIF's maximum width */
+    display: block; /* Ensure the GIF takes its own line */
+    margin-left: auto; /* Center align */
+    margin-right: auto; /* Center align */
+}
+
+/* Options Container for Square Layout */
+.options-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create two columns */
+    gap: 20px; /* Space between buttons */
+    justify-content: center;
+    margin-top: 5px;
+}
+
+/* Individual Option Styling */
+.option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Button Styling */
+.dateOption {
+    padding: 15px 20px;
+    font-size: 1rem;
+    background-color: #f20044;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dateOption:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
+}
+
+.dateOption:active {
+    transform: scale(0.95);
+}
+
+.tenor-gif-embed {
+    margin-bottom: 20px; /* Add space below the GIF */
+    max-width: 300px; /* Optional: Limit the GIF's width */
+    display: block; /* Ensure the GIF is centered */
+    margin-left: auto;
+    margin-right: auto;
+}
+

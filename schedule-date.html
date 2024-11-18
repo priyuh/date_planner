@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Schedule Date</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <!-- Embed Milk and Mocha GIF -->
+        <div class="tenor-gif-embed" data-postid="14711684128416486322" data-share-method="host" data-aspect-ratio="1.13402" data-width="100%">
+            <a href="https://tenor.com/view/milk-and-mocha-gif-14711684128416486322">Milk And Mocha Sticker</a>
+            from 
+            <a href="https://tenor.com/search/milk+and+mocha-stickers">Milk And Mocha Stickers</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+        <!-- Main Content -->
+        <h1>Enter the time and day you are free:</h1>
+        <form id="scheduleForm" action="https://formspree.io/f/manybnwq" method="POST">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required><br>
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required><br>
+            <input type="hidden" name="dateChoice" id="dateChoice" value="">
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Sparkles Container -->
+        <div class="particle-container"></div>
+
+        <!-- Sparkles Script -->
+        <script>
+            const particleContainer = document.querySelector('.particle-container');
+
+            // Create 50 sparkles
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                // Randomize positions and animation delays
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particle.style.animationDuration = Math.random() * 3 + 3 + 's';
+
+                particleContainer.appendChild(particle);
+            }
+        </script>
+
+        <!-- Form Submission and Free Redirection -->
+        <script>
+            document.getElementById('scheduleForm').addEventListener('submit', function (e) {
+                e.preventDefault(); // Prevent default form submission behavior
+
+                // Get form data
+                const form = e.target;
+                const formData = new FormData(form);
+
+                // Send data to Formspree
+                fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json',
+                    },
+                })
+                    .then((response) => {
+                        if (response.ok) {
+                            // Redirect to the Thank You page on success
+                            window.location.href = 'thank-you.html';
+                        } else {
+                            alert('Oops! There was a problem submitting your form.');
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Form submission error:', error);
+                        alert('Oops! There was a problem submitting your form.');
+                    });
+
+                // Clear localStorage
+                localStorage.clear();
+            });
+
+            // Pre-fill the hidden field with the date choice from localStorage
+            const dateChoice = localStorage.getItem('dateChoice');
+            document.getElementById('dateChoice').value = dateChoice;
+        </script>
+    </body>
+</html>

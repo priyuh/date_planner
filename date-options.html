@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Date Options</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <!-- Embed Silly Hehe Monkey Picture -->
+        <div class="tenor-gif-embed" data-postid="4803721277327387772" data-share-method="host" data-aspect-ratio="1.00556" data-width="100%">
+            <a href="https://tenor.com/view/silly-hehe-hmmm-monkey-biting-finger-monkey-gif-4803721277327387772">
+                Silly Hehe Meme
+            </a>
+            from 
+            <a href="https://tenor.com/search/silly-memes">Silly Memes</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+        <!-- Main Content -->
+        <h1>What Should We Do?</h1>
+
+        <!-- Date Options with Buttons in a Square Layout -->
+        <div class="options-container">
+            <div class="option">
+                <button class="dateOption">Ice Skating Date</button>
+            </div>
+            <div class="option">
+                <button class="dateOption">Movies Date</button>
+            </div>
+            <div class="option">
+                <button class="dateOption">Dinner Date</button>
+            </div>
+            <div class="option">
+                <button class="dateOption">Painting Date</button>
+            </div>
+            <div class="option">
+                <button class="dateOption">Clay Making Date</button>
+            </div>
+            <div class="option">
+                <button class="dateOption">Study Date</button>
+            </div>
+        </div>
+
+        <!-- Sparkles Container -->
+        <div class="particle-container"></div>
+
+        <!-- Sparkles Script -->
+        <script>
+            const particleContainer = document.querySelector('.particle-container');
+
+            // Create 50 sparkles
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                // Randomize positions and animation delays
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particle.style.animationDuration = Math.random() * 3 + 3 + 's';
+
+                particleContainer.appendChild(particle);
+            }
+        </script>
+
+        <!-- Page-Specific Script -->
+        <script>
+            document.querySelectorAll('.dateOption').forEach(button => {
+                button.addEventListener('click', function () {
+                    const choice = this.innerText;
+                    localStorage.setItem('dateChoice', choice); // Store choice locally
+                    alert(`You chose: ${choice}`);
+                    window.location.href = 'schedule-date.html'; // Navigate to the scheduling page
+                });
+            });
+        </script>
+    </body>
+</html>
